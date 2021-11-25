@@ -1,5 +1,16 @@
-# FinFacil-App
-Aplicativo FinFácil - Gerenciador financeiro fácil, simples e rápido.
+# finfacil_app
 
-# Rotina e cronograma de implementação 
-link: https://trello.com/b/43cTdfSS/finf%C3%A1cil
+A new Flutter project.
+
+## Getting Started
+
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
