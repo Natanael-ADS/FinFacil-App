@@ -1,17 +1,11 @@
+import 'package:finfacil_app/modules/app_module.dart';
+import 'package:finfacil_app/modules/app_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'FinFácil',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: Container());
-  }
+  runApp(ModularApp(
+    module: AppModule(),
+    child: AppWidget(),
+  ));
 }
