@@ -110,6 +110,10 @@ fixnum
 2.12
 file:///home/natanael/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/fixnum-1.0.0/
 file:///home/natanael/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/fixnum-1.0.0/lib/
+flutter_mobx
+2.12
+file:///home/natanael/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_mobx-2.0.2/
+file:///home/natanael/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_mobx-2.0.2/lib/
 flutter_modular
 2.12
 file:///home/natanael/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_modular-4.3.0/
@@ -166,6 +170,14 @@ mime
 2.12
 file:///home/natanael/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/mime-1.0.1/
 file:///home/natanael/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/mime-1.0.1/lib/
+mobx
+2.12
+file:///home/natanael/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/mobx-2.0.5/
+file:///home/natanael/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/mobx-2.0.5/lib/
+mobx_codegen
+2.12
+file:///home/natanael/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/mobx_codegen-2.0.4/
+file:///home/natanael/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/mobx_codegen-2.0.4/lib/
 mockito
 2.12
 file:///home/natanael/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/mockito-5.0.16/

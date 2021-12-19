@@ -5,6 +5,8 @@ import 'package:finfacil_app/modules/login/infra/datasources/user_validate_datas
 import 'package:finfacil_app/modules/login/infra/repositories/user_validate_repository_impl.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import 'login/presenter/sign_in/sign_in_page.dart';
+
 class AppModule extends Module {
   @override
   List<Bind> get binds {
@@ -22,5 +24,9 @@ class AppModule extends Module {
   }
 
   @override
-  List<ModularRoute> get routes => [];
+  List<ModularRoute> get routes {
+    return [
+      ChildRoute('/', child: (context, args) => LoginPage()),
+    ];
+  }
 }

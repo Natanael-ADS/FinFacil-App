@@ -170,6 +170,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_mobx",
+      "rootUri": "file:///home/natanael/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_mobx-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_modular",
       "rootUri": "file:///home/natanael/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_modular-4.3.0",
       "packageUri": "lib/",
@@ -256,6 +262,18 @@
     {
       "name": "mime",
       "rootUri": "file:///home/natanael/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/mime-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "mobx",
+      "rootUri": "file:///home/natanael/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/mobx-2.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "mobx_codegen",
+      "rootUri": "file:///home/natanael/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/mobx_codegen-2.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -428,7 +446,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-12-18T21:48:57.621550Z",
+  "generated": "2021-12-19T03:53:49.621564Z",
   "generator": "pub",
   "generatorVersion": "2.14.4"
 }
