@@ -70,11 +70,11 @@ class _LoginPageState extends State<LoginPage> {
   Widget _btnLogin() {
     return ElevatedButton(
       onPressed: () async {
-        String result = await store.loadingLogin(
+        final result = await store.loadingLogin(
           name: edtNameController.text,
           password: edtPasswordController.text,
         );
-        _alertDialog(contentText: result);
+        result.showMessage(context);
       },
       child: Text("Sign In"),
     );
