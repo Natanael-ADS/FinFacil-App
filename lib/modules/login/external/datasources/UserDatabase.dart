@@ -1,13 +1,13 @@
+import 'package:finfacil_app/modules/core/external/database_mock.dart';
 import 'package:finfacil_app/modules/login/infra/datasources/user_validate_datasource.dart';
 import 'package:finfacil_app/modules/login/infra/models/user_model.dart';
 
 class UserDatabase implements UserValidateDatasource {
   List<UserModel> userModels;
+  final DatabaseMock database;
 
-  UserDatabase() {
-    userModels = [
-      UserModel(id: 1, name: "admin", password: "admin", logged: false)
-    ];
+  UserDatabase(this.database) {
+    userModels = database.getUsers;
   }
 
   @override
