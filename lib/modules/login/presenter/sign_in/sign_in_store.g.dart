@@ -26,11 +26,20 @@ mixin _$SignInStore on _SignInStoreBase, Store {
     });
   }
 
+  final _$loadingLoginAsyncAction =
+      AsyncAction('_SignInStoreBase.loadingLogin');
+
+  @override
+  Future<StatusLogin> loadingLogin({String name, String password}) {
+    return _$loadingLoginAsyncAction
+        .run(() => super.loadingLogin(name: name, password: password));
+  }
+
   final _$_SignInStoreBaseActionController =
       ActionController(name: '_SignInStoreBase');
 
   @override
-  dynamic setVisibilityPassword() {
+  void setVisibilityPassword() {
     final _$actionInfo = _$_SignInStoreBaseActionController.startAction(
         name: '_SignInStoreBase.setVisibilityPassword');
     try {
