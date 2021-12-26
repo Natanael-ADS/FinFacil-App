@@ -7,7 +7,7 @@ class UserDatabase implements UserValidateDatasource {
   final DatabaseMock database;
 
   UserDatabase(this.database) {
-    userModels = database.getUsers;
+    userModels = database.getUsers();
   }
 
   @override
