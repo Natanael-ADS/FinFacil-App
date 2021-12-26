@@ -7,9 +7,9 @@ class LaunchType {
     this._description = description;
   }
 
-  get geId => this._id;
-  set setId(value) => this._id = value;
+  getId() => this._id;
+  void setId(int value) => this._id = value;
 
-  get geDescription => this._description;
-  set setDescription(value) => this._description = value;
+  getDescription() => this._description;
+  void setDescription(String value) => this._description = value;
 }

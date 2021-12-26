@@ -11,12 +11,12 @@ class HistoryType {
     this._launch = launch;
   }
 
-  get geId => this._id;
-  set setId(value) => this._id = value;
+  getId() => this._id;
+  void setId(int value) => this._id = value;
 
-  get geDay => this._day;
-  set setDay(value) => this._day = value;
+  getDay() => this._day;
+  void setDay(DateTime value) => this._day = value;
 
-  get geLaunch => this._launch;
-  set setLaunch(value) => this._launch = value;
+  getLaunch() => this._launch;
+  void setLaunch(LaunchType value) => this._launch = value;
 }
