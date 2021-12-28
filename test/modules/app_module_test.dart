@@ -1,4 +1,6 @@
 import 'package:finfacil_app/modules/app_module.dart';
+import 'package:finfacil_app/modules/financial_document/domain/status_financial.dart';
+import 'package:finfacil_app/modules/financial_document/domain/usecases/search_entry_and_exit.dart';
 import 'package:finfacil_app/modules/login/domain/entities/user.dart';
 import 'package:finfacil_app/modules/login/domain/usecases/user_validate_usecase.dart';
 import 'package:finfacil_app/modules/login/status_login.dart';
@@ -16,5 +18,14 @@ void main() {
     final result = await usecase(user);
 
     expect(result, isA<SuccessLogin>());
+  });
+
+  test('return StatusSuccess', () async {
+    final usecase = Modular.get<SearchEntryAndExitImpl>();
+
+    final result = await usecase(DateTime(2021, 12, 01));
+
+    expect(result, isA<StatusSuccess>());
+    expect(result.getValueDifferent(), '50.00');
   });
 }

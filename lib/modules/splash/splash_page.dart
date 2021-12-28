@@ -29,7 +29,7 @@ class _SplashPageState extends State<SplashPage> {
     return SizedBox(
       height: 200,
       width: 200,
-      child: Image.asset('lib/images/logo.png'),
+      child: Image.asset('lib/images/loading.gif'),
     );
   }
 

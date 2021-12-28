@@ -17,7 +17,7 @@ class ExitHistoryModel {
 
   ExitHistory toUnity() {
     return ExitHistory(
-        id: this.id, day: this.day, launch: this.launch.toUnity());
+        id: this.id, day: this.day, launch: this.launch?.toUnity());
   }
 
   Map<String, dynamic> toMap() {
