@@ -1,11 +1,10 @@
 import 'package:finfacil_app/modules/core/util/double_util.dart';
 import 'package:finfacil_app/modules/financial_document/domain/enities/financial_document.dart';
 import 'package:finfacil_app/modules/financial_document/domain/repositories/search_financial_repository.dart';
-
-import '../status_financial.dart';
+import 'package:finfacil_app/modules/financial_document/domain/status/status_entry_exit.dart';
 
 abstract class SearchEntryAndExit {
-  Future<StatusFinancial> call(DateTime date);
+  Future<StatusEntryExit> call(DateTime date);
 }
 
 class SearchEntryAndExitImpl implements SearchEntryAndExit {
@@ -13,7 +12,7 @@ class SearchEntryAndExitImpl implements SearchEntryAndExit {
 
   SearchEntryAndExitImpl(this.repository);
   @override
-  Future<StatusFinancial> call(DateTime date) async {
+  Future<StatusEntryExit> call(DateTime date) async {
     try {
       final documents = await repository.search(date);
       return _calculate(documents);

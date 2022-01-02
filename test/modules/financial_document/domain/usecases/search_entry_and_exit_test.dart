@@ -2,7 +2,7 @@ import 'package:finfacil_app/modules/financial_document/domain/enities/entry_his
 import 'package:finfacil_app/modules/financial_document/domain/enities/exit_history.dart';
 import 'package:finfacil_app/modules/financial_document/domain/enities/financial_document.dart';
 import 'package:finfacil_app/modules/financial_document/domain/repositories/search_financial_repository.dart';
-import 'package:finfacil_app/modules/financial_document/domain/status_financial.dart';
+import 'package:finfacil_app/modules/financial_document/domain/status/status_entry_exit.dart';
 import 'package:finfacil_app/modules/financial_document/domain/usecases/search_entry_and_exit.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';

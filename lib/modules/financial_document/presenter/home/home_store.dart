@@ -1,6 +1,6 @@
 import 'package:finfacil_app/modules/core/util/datetime_util.dart';
 import 'package:finfacil_app/modules/core/util/dialog_util.dart';
-import 'package:finfacil_app/modules/financial_document/domain/status_financial.dart';
+import 'package:finfacil_app/modules/financial_document/domain/status/status_entry_exit.dart';
 import 'package:finfacil_app/modules/financial_document/domain/usecases/search_entry_and_exit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -17,7 +17,7 @@ abstract class _HomeStoreBase with Store {
   DateTime dateCurrent = DateTime.now();
 
   @observable
-  StatusFinancial status = StatusError();
+  StatusEntryExit status = StatusError();
 
   @action
   void nextDate(BuildContext context) {

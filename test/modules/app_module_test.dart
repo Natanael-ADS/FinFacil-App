@@ -1,5 +1,5 @@
 import 'package:finfacil_app/modules/app_module.dart';
-import 'package:finfacil_app/modules/financial_document/domain/status_financial.dart';
+import 'package:finfacil_app/modules/financial_document/domain/status/status_entry_exit.dart';
 import 'package:finfacil_app/modules/financial_document/domain/usecases/search_entry_and_exit.dart';
 import 'package:finfacil_app/modules/login/domain/entities/user.dart';
 import 'package:finfacil_app/modules/login/domain/usecases/user_validate_usecase.dart';

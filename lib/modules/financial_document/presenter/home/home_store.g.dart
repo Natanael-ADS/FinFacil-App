@@ -27,13 +27,13 @@ mixin _$HomeStore on _HomeStoreBase, Store {
   final _$statusAtom = Atom(name: '_HomeStoreBase.status');
 
   @override
-  StatusFinancial get status {
+  StatusEntryExit get status {
     _$statusAtom.reportRead();
     return super.status;
   }
 
   @override
-  set status(StatusFinancial value) {
+  set status(StatusEntryExit value) {
     _$statusAtom.reportWrite(value, super.status, () {
       super.status = value;
     });
