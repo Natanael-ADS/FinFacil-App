@@ -1,3 +1,4 @@
+import 'package:finfacil_app/modules/core/const/image_const.dart';
 import 'package:finfacil_app/modules/core/const/route_const.dart';
 import 'package:finfacil_app/modules/core/util/timer_util.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,7 @@ class _SplashPageState extends State<SplashPage> {
     return SizedBox(
       height: 200,
       width: 200,
-      child: Image.asset('lib/images/loading.gif'),
+      child: Image.asset(ImageConst.LOADING),
     );
   }
 

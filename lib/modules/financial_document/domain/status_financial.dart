@@ -33,11 +33,11 @@ class StatusSuccess implements StatusFinancial {
   String getMessage() => '';
 
   @override
-  String getValueDifferent() => this.valueDifferent;
+  String getValueDifferent() => "R\$ ${this.valueDifferent}";
 
   @override
-  String getValueInput() => this.valueEntries;
+  String getValueInput() => "R\$ ${this.valueEntries}";
 
   @override
-  String getValueOutput() => this.valueExits;
+  String getValueOutput() => "R\$ ${this.valueExits}";
 }

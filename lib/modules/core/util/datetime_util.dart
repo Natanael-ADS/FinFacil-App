@@ -52,4 +52,28 @@ class DatetimeUtil {
       return DATETIME_INVALIDATE;
     }
   }
+
+  static String getMonthYear(DateTime date) {
+    try {
+      return "${_months[date.month]}/${date.year.toString()}";
+    } on Exception catch (e) {
+      print(e);
+      return "DATETIME_INVALIDATE";
+    }
+  }
+
+  static const _months = {
+    1: "Janeiro",
+    2: "Fevereiro",
+    3: "Março",
+    4: "Abril",
+    5: "Maio",
+    6: "Junho",
+    7: "Julho",
+    8: "Agosto",
+    9: "Setembro",
+    10: "Outubro",
+    11: "Novembro",
+    12: "Dezembro",
+  };
 }

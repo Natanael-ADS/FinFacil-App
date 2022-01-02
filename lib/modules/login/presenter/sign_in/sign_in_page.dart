@@ -1,6 +1,11 @@
+import 'package:finfacil_app/modules/core/const/color_const.dart';
+import 'package:finfacil_app/modules/core/const/route_const.dart';
 import 'package:finfacil_app/modules/login/presenter/sign_in/sign_in_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+
+import '../../status_login.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -74,28 +79,16 @@ class _LoginPageState extends State<LoginPage> {
           name: edtNameController.text,
           password: edtPasswordController.text,
         );
-        result.showMessage(context);
+        if (result is SuccessLogin) {
+          Modular.to.navigate(RouteConst.HOME);
+        } else {
+          result.showMessage(context);
+        }
       },
-      child: Text("Sign In"),
-    );
-  }
-
-  _alertDialog({String contentText}) {
-    return showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) {
-        return AlertDialog(
-          title: Text("Warning!"),
-          content: Text(contentText),
-          actions: [
-            ElevatedButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text("OK"),
-            ),
-          ],
-        );
-      },
+      child: Text(
+        "Sign In",
+        style: TextStyle(color: ColorConst.TEXT_2),
+      ),
     );
   }
 }
