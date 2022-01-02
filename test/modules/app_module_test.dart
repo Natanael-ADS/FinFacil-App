@@ -1,5 +1,8 @@
 import 'package:finfacil_app/modules/app_module.dart';
+import 'package:finfacil_app/modules/financial_document/domain/enities/financial_document.dart';
+import 'package:finfacil_app/modules/financial_document/domain/status/status_add_document.dart';
 import 'package:finfacil_app/modules/financial_document/domain/status/status_entry_exit.dart';
+import 'package:finfacil_app/modules/financial_document/domain/usecases/add_document.dart';
 import 'package:finfacil_app/modules/financial_document/domain/usecases/search_entry_and_exit.dart';
 import 'package:finfacil_app/modules/login/domain/entities/user.dart';
 import 'package:finfacil_app/modules/login/domain/usecases/user_validate_usecase.dart';
@@ -27,5 +30,13 @@ void main() {
 
     expect(result, isA<StatusSuccess>());
     expect(result.getValueDifferent(), '50.00');
+  });
+
+  test('AddDocument StatusOK', () async {
+    final usecase = Modular.get<AddDocumentImpl>();
+
+    final result = await usecase(FinancialDocument());
+
+    expect(result, isA<StatusOK>());
   });
 }

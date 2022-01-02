@@ -31,8 +31,7 @@ class FinancialDocumentDataBase implements FinancialDatasource {
   }
 
   @override
-  Future<void> add(FinancialDocumentModel model) {
-    // TODO: implement add
-    throw UnimplementedError();
+  void add(FinancialDocumentModel model) {
+    db.setFinancialDocument(model);
   }
 }
