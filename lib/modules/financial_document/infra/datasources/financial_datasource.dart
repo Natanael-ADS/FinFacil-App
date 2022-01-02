@@ -3,4 +3,5 @@ import 'package:finfacil_app/modules/financial_document/infra/models/financial_d
 
 abstract class FinancialDatasource {
   Future<List<FinancialDocumentModel>> searchFromDate(DateTime date);
+  Future<void> add(FinancialDocumentModel model);
 }

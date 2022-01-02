@@ -43,4 +43,16 @@ class EntryHistoryModel {
 
   @override
   String toString() => 'HistoryTypeModel(id: $id, day: $day, launch: $launch)';
+
+  EntryHistoryModel copyWith({
+    int id,
+    DateTime day,
+    LaunchTypeModel launch,
+  }) {
+    return EntryHistoryModel(
+      id: id ?? this.id,
+      day: day ?? this.day,
+      launch: launch ?? this.launch,
+    );
+  }
 }

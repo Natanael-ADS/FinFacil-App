@@ -29,4 +29,10 @@ class FinancialDocumentDataBase implements FinancialDatasource {
 
     return documents.toList();
   }
+
+  @override
+  Future<void> add(FinancialDocumentModel model) {
+    // TODO: implement add
+    throw UnimplementedError();
+  }
 }
