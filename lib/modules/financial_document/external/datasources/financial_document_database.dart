@@ -11,23 +11,25 @@ class FinancialDocumentDataBase implements FinancialDatasource {
   Future<List<FinancialDocumentModel>> searchFromDate(DateTime date) async {
     List<FinancialDocumentModel> models = db.getFinancialDocuments();
 
-    var documents = models.where(
+    var documents = await models.where(
       (m) {
         bool hasEntries = m.entries
-            ?.where((e) => e.day.month == date.month)
-            ?.toList()
-            ?.isNotEmpty;
+                ?.where((e) => e.day.month == date.month)
+                ?.toList()
+                ?.isNotEmpty ??
+            false;
 
         bool hasExits = m.exits
-            ?.where((e) => e.day.month == date.month)
-            ?.toList()
-            ?.isNotEmpty;
+                ?.where((e) => e.day.month == date.month)
+                ?.toList()
+                ?.isNotEmpty ??
+            false;
 
-        return hasEntries ?? false || hasExits ?? false;
+        return hasEntries || hasExits;
       },
-    );
+    ).toList();
 
-    return documents.toList();
+    return documents;
   }
 
   @override

@@ -17,6 +17,8 @@ class _LoginPageState extends State<LoginPage> {
   final edtNameController = TextEditingController();
   final edtPasswordController = TextEditingController();
 
+  final isLogined = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

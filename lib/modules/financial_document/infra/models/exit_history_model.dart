@@ -44,16 +44,4 @@ class ExitHistoryModel {
 
   @override
   String toString() => 'HistoryTypeModel(id: $id, day: $day, launch: $launch)';
-
-  ExitHistoryModel copyWith({
-    int id,
-    DateTime day,
-    LaunchTypeModel launch,
-  }) {
-    return ExitHistoryModel(
-      id: id ?? this.id,
-      day: day ?? this.day,
-      launch: launch ?? this.launch,
-    );
-  }
 }

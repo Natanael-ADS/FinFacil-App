@@ -1,10 +1,12 @@
-import 'dart:ui';
-
 import 'package:finfacil_app/modules/core/const/color_const.dart';
 import 'package:finfacil_app/modules/core/const/image_const.dart';
+import 'package:finfacil_app/modules/core/const/route_const.dart';
+import 'package:finfacil_app/modules/core/const/string_const.dart';
+import 'package:finfacil_app/modules/core/custom/filter_custom.dart';
 import 'package:finfacil_app/modules/financial_document/presenter/home/home_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -46,42 +48,13 @@ class _HomePageState extends State<HomePage> {
   }
 
   _date(BuildContext context) {
-    return Container(
-      height: 80,
-      width: double.infinity,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          IconButton(
-              iconSize: 40,
-              onPressed: () => store.previousDate(context),
-              icon: Image.asset(
-                ImageConst.PREVIOUS,
-                color: ColorConst.THEME_1,
-              )),
-          Observer(builder: (_) {
-            return SizedBox(
-              height: 20,
-              width: 150,
-              child: Center(
-                child: Text(
-                  store.showDate(),
-                  style: TextStyle(fontSize: 20, color: ColorConst.TEXT_1),
-                ),
-              ),
-            );
-          }),
-          IconButton(
-            iconSize: 40,
-            onPressed: () => store.nextDate(context),
-            icon: Image.asset(
-              ImageConst.NEXT,
-              color: ColorConst.THEME_1,
-            ),
-          ),
-        ],
-      ),
-    );
+    return Observer(builder: (_) {
+      return CustomFilter(
+        contentText: store.showDate(context),
+        onPressedNext: () => store.nextDate(),
+        onPressedPrevious: () => store.previousDate(),
+      );
+    });
   }
 
   _entryAndExit() {
@@ -128,9 +101,10 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Observer(builder: (_) {
-                        return Text(store.status.getValueInput(),
-                            style:
-                                TextStyle(color: Colors.green, fontSize: 20));
+                        return Text(
+                          store.status.getValueInput(),
+                          style: TextStyle(color: Colors.green, fontSize: 20),
+                        );
                       }),
                       Observer(builder: (_) {
                         return Text(
@@ -213,7 +187,11 @@ class _HomePageState extends State<HomePage> {
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.green),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Modular.to.navigate(
+                  RouteConst.LAUNCH + "/${StringConst.ENTRY}",
+                );
+              },
               child: Row(
                 children: [
                   Icon(
@@ -232,7 +210,9 @@ class _HomePageState extends State<HomePage> {
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.red),
               ),
-              onPressed: () {},
+              onPressed: () => Modular.to.navigate(
+                RouteConst.LAUNCH + "/${StringConst.EXIT}",
+              ),
               child: Row(
                 children: [
                   Icon(

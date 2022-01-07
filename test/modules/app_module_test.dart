@@ -29,7 +29,7 @@ void main() {
     final result = await usecase(DateTime(2021, 12, 01));
 
     expect(result, isA<StatusSuccess>());
-    expect(result.getValueDifferent(), '50.00');
+    expect(result.getValueDifferent(), 'R\$ 50.00');
   });
 
   test('AddDocument StatusOK', () async {

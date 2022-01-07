@@ -12,6 +12,7 @@ import 'package:finfacil_app/modules/login/infra/repositories/user_validate_repo
 import 'package:finfacil_app/modules/splash/splash_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import 'financial_document/presenter/launch/launch_page.dart';
 import 'login/presenter/sign_in/sign_in_page.dart';
 
 class AppModule extends Module {
@@ -36,6 +37,9 @@ class AppModule extends Module {
       ChildRoute(RouteConst.SPLASH, child: (context, args) => SplashPage()),
       ChildRoute(RouteConst.LOGIN, child: (context, args) => LoginPage()),
       ChildRoute(RouteConst.HOME, child: (context, args) => HomePage()),
+      ChildRoute(RouteConst.LAUNCH_KEY, child: (context, args) {
+        return LaunchPage(args.params[RouteConst.KEY]);
+      })
     ];
   }
 }

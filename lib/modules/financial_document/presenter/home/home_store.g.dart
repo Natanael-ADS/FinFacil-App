@@ -43,22 +43,22 @@ mixin _$HomeStore on _HomeStoreBase, Store {
       ActionController(name: '_HomeStoreBase');
 
   @override
-  void nextDate(BuildContext context) {
+  void nextDate() {
     final _$actionInfo = _$_HomeStoreBaseActionController.startAction(
         name: '_HomeStoreBase.nextDate');
     try {
-      return super.nextDate(context);
+      return super.nextDate();
     } finally {
       _$_HomeStoreBaseActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  void previousDate(BuildContext context) {
+  void previousDate() {
     final _$actionInfo = _$_HomeStoreBaseActionController.startAction(
         name: '_HomeStoreBase.previousDate');
     try {
-      return super.previousDate(context);
+      return super.previousDate();
     } finally {
       _$_HomeStoreBaseActionController.endAction(_$actionInfo);
     }

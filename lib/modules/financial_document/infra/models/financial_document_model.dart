@@ -36,7 +36,6 @@ class FinancialDocumentModel {
     unity.setExits(this.exits?.map((e) => e.toUnity())?.toList() ?? []);
     unity.setNumberParcel(this.numberParcel);
     unity.setValueParcel(this.valueParcel);
-    unity.setValueTotal(this.valueTotal);
 
     return unity;
   }
@@ -78,25 +77,5 @@ class FinancialDocumentModel {
   @override
   String toString() {
     return 'FinancialDocumentModel(id: $id, description: $description, valueTotal: $valueTotal, dueDate: $dueDate, valueParcel: $valueParcel, numberParcel: $numberParcel, entries: $entries, exits: $exits)';
-  }
-
-  FinancialDocumentModel copyWith({
-    int id,
-    String description,
-    double valueTotal,
-    double valueParcel,
-    int numberParcel,
-    List<EntryHistoryModel> entries,
-    List<ExitHistoryModel> exits,
-  }) {
-    return FinancialDocumentModel(
-      id: id ?? this.id,
-      description: description ?? this.description,
-      valueTotal: valueTotal ?? this.valueTotal,
-      valueParcel: valueParcel ?? this.valueParcel,
-      numberParcel: numberParcel ?? this.numberParcel,
-      entries: entries ?? this.entries,
-      exits: exits ?? this.exits,
-    );
   }
 }

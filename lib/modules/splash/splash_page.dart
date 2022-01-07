@@ -45,9 +45,14 @@ class _SplashPageState extends State<SplashPage> {
     );
   }
 
+  final isLogined = true;
   _threading(context) {
     TimerUtil.start(10, () {
-      Modular.to.navigate(RouteConst.LOGIN);
+      if (isLogined) {
+        Modular.to.navigate(RouteConst.HOME);
+      } else {
+        Modular.to.navigate(RouteConst.LOGIN);
+      }
     });
   }
 }

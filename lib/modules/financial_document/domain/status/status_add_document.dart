@@ -9,8 +9,12 @@ class StatusOK implements StatusAddDocument {
 
 class StatusError implements StatusAddDocument {
   final Exception error;
+  final msg;
 
-  StatusError(this.error);
+  StatusError({this.error, this.msg});
   @override
-  String message() => "Erro ao inserir";
+  String message() {
+    print("StatusErro: $msg");
+    return "Erro ao inserir";
+  }
 }

@@ -20,18 +20,19 @@ abstract class _HomeStoreBase with Store {
   StatusEntryExit status = StatusError();
 
   @action
-  void nextDate(BuildContext context) {
+  void nextDate() {
     dateCurrent = dateCurrent.add(Duration(days: 31));
-    _search(context);
   }
 
   @action
-  void previousDate(BuildContext context) {
+  void previousDate() {
     dateCurrent = dateCurrent.add(Duration(days: -31));
-    _search(context);
   }
 
-  String showDate() => DatetimeUtil.getMonthYear(dateCurrent);
+  String showDate(BuildContext context) {
+    _search(context);
+    return DatetimeUtil.getMonthYear(dateCurrent);
+  }
 
   void _search(BuildContext context) async {
     status = await searchEntryAndExit(dateCurrent);

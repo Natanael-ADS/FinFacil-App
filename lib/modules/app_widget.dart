@@ -7,6 +7,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'FinFácil',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: ColorConst.THEME_1,
         appBarTheme: AppBarTheme(

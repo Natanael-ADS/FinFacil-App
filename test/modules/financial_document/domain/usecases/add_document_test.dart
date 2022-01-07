@@ -1,3 +1,4 @@
+import 'package:finfacil_app/modules/financial_document/domain/enities/entry_history.dart';
 import 'package:finfacil_app/modules/financial_document/domain/enities/financial_document.dart';
 import 'package:finfacil_app/modules/financial_document/domain/repositories/add_document_repository.dart';
 import 'package:finfacil_app/modules/financial_document/domain/status/status_add_document.dart';
@@ -24,6 +25,14 @@ void main() {
     when(repository.add(any)).thenThrow(Exception());
 
     final result = await usecase(FinancialDocument());
+
+    expect(result, isA<StatusError>());
+  });
+
+  testWidgets('add without day in entry or exity erros...', (tester) async {
+    var document = FinancialDocument();
+    document.setEntries([EntryHistory(day: null)]);
+    final result = await usecase(document);
 
     expect(result, isA<StatusError>());
   });

@@ -12,11 +12,43 @@ class AddDocumentImpl implements AddDocument {
   AddDocumentImpl(this.repository);
   @override
   Future<StatusAddDocument> call(FinancialDocument document) async {
+    StatusAddDocument status = StatusError();
     try {
-      repository.add(document);
-      return StatusOK();
+      if (_validate(document)) {
+        repository.add(document);
+        status = StatusOK();
+      }
     } on Exception catch (e) {
-      return StatusError(e);
+      status = StatusError(error: e);
     }
+    return status;
+  }
+
+  bool _validate(FinancialDocument document) {
+    var isOK = true;
+    if (isOK) {
+      isOK = _validateEntryAndExit(document);
+    }
+    return isOK;
+  }
+
+  bool _validateEntryAndExit(FinancialDocument document) {
+    bool isNull = false;
+    for (var entry in document.getEntries()) {
+      if (entry.getDay() == null) {
+        isNull = true;
+      }
+    }
+
+    for (var exit in document.getExits()) {
+      if (exit.getDay() == null) {
+        isNull = true;
+      }
+    }
+
+    if (isNull) {
+      StatusError(msg: "Entrada e saida sem data!");
+    }
+    return isNull == false;
   }
 }

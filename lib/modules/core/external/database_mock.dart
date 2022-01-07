@@ -48,7 +48,7 @@ class DatabaseMock {
         exits: [
           ExitHistoryModel(day: DateTime(2021, 11, 26)),
         ],
-      )
+      ),
     ];
   }
 }

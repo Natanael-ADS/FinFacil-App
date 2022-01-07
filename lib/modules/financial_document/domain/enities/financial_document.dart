@@ -5,7 +5,6 @@ import 'exit_history.dart';
 class FinancialDocument {
   int _id = 0;
   String _description = '';
-  double _valueTotal = 0.00;
   DateTime _dueDate = DateTime.now();
   double _valueParcel = 0.00;
   int _numberParcel = 0;
@@ -14,30 +13,51 @@ class FinancialDocument {
 
   FinancialDocument();
 
-  int getId() => this._id;
-  void setId(int value) => this._id = value;
+  int getId() => _id;
+  void setId(int value) => _id = value;
 
-  String getDescription() => this._description;
-  void setDescription(String value) => this._description = value;
+  String getDescription() => _description;
+  void setDescription(String value) => _description = value;
 
-  double getValueTotal() => this._valueTotal;
-  void setValueTotal(double value) => this._valueTotal = value;
+  DateTime getDueDate() => _dueDate;
+  void setDueDate(DateTime value) => _dueDate = value;
 
-  DateTime getDueDate() => this._dueDate;
-  void setDueDate(DateTime value) => this._dueDate = value;
+  double getValueParcel() => _valueParcel;
+  void setValueParcel(double value) => _valueParcel = value;
 
-  double getValueParcel() => this._valueParcel;
-  void setValueParcel(double value) => this._valueParcel = value;
+  int getNumberParcel() => _numberParcel;
+  void setNumberParcel(int value) => _numberParcel = value;
 
-  int getNumberParcel() => this._numberParcel;
-  void setNumberParcel(int value) => this._numberParcel = value;
+  List<EntryHistory> getEntries() => _entries;
+  void setEntries(List<EntryHistory> value) => _entries = value;
 
-  List<EntryHistory> getEntries() => this._entries;
-  void setEntries(List<EntryHistory> value) => this._entries = value;
+  List<ExitHistory> getExits() => _exits;
+  void setExits(List<ExitHistory> value) => _exits = value;
 
-  List<ExitHistory> getExits() => this._exits;
-  void setExits(List<ExitHistory> value) => this._exits = value;
+  double totalValueEntries() => _valueParcel * _entries.length;
+  double totalValueExits() => _valueParcel * _exits.length;
+  double totalValue() => _valueParcel * _numberParcel;
+  int numberEntriesAndExits() => (_exits.length + _entries.length);
 
-  double totalValueEntries() => this._valueParcel * this._entries.length;
-  double totalValueExits() => this._valueParcel * this._exits.length;
+  double totalValueEntriesOrExits() {
+    return numberEntriesAndExits() * _valueParcel;
+  }
+
+  double totalValueWithoutEntriesOrExits() {
+    return (_numberParcel - numberEntriesAndExits()) * _valueParcel;
+  }
+
+  void setNumberEntry(int number) {
+    _entries = [];
+    for (var _ = 1; _ <= number; _++) {
+      _entries += [EntryHistory()];
+    }
+  }
+
+  void setNumberExity(int number) {
+    _exits = [];
+    for (var _ = 1; _ <= number; _++) {
+      _exits += [ExitHistory()];
+    }
+  }
 }

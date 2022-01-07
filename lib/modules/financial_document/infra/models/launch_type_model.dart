@@ -5,7 +5,10 @@ import 'package:finfacil_app/modules/financial_document/domain/enities/launch_ty
 class LaunchTypeModel {
   int id = 0;
   String description = '';
-  LaunchTypeModel();
+  LaunchTypeModel({
+    this.id,
+    this.description,
+  });
 
   Map<String, dynamic> toMap() {
     return {

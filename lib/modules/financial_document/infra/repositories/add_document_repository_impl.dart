@@ -4,6 +4,7 @@ import 'package:finfacil_app/modules/financial_document/infra/datasources/financ
 import 'package:finfacil_app/modules/financial_document/infra/models/entry_history_model.dart';
 import 'package:finfacil_app/modules/financial_document/infra/models/exit_history_model.dart';
 import 'package:finfacil_app/modules/financial_document/infra/models/financial_document_model.dart';
+import 'package:finfacil_app/modules/financial_document/infra/models/launch_type_model.dart';
 
 class AddDocumentRepositoryImpl implements AddDocumentRepository {
   final FinancialDatasource datasource;
@@ -11,23 +12,36 @@ class AddDocumentRepositoryImpl implements AddDocumentRepository {
   AddDocumentRepositoryImpl(this.datasource);
   @override
   void add(FinancialDocument document) async {
-    final model = FinancialDocumentModel();
-    model.copyWith(
+    final model = FinancialDocumentModel(
       id: document.getId(),
       description: document.getDescription(),
       entries: document.getEntries().map((e) {
-        final model = EntryHistoryModel();
-        model.copyWith(id: e.getId(), day: e.getDay(), launch: e.getLaunch());
-        return model;
+        final launch = e.getLaunch();
+
+        return EntryHistoryModel(
+          id: e.getId(),
+          day: e.getDay(),
+          launch: LaunchTypeModel(
+            id: launch.getId(),
+            description: launch.getDescription(),
+          ),
+        );
       }).toList(),
       exits: document.getExits().map((e) {
-        final model = ExitHistoryModel();
-        model.copyWith(id: e.getId(), day: e.getDay(), launch: e.getLaunch());
-        return model;
+        final launch = e.getLaunch();
+
+        return ExitHistoryModel(
+          id: e.getId(),
+          day: e.getDay(),
+          launch: LaunchTypeModel(
+            id: launch.getId(),
+            description: launch.getDescription(),
+          ),
+        );
       }).toList(),
       numberParcel: document.getNumberParcel(),
       valueParcel: document.getValueParcel(),
-      valueTotal: document.getValueTotal(),
+      valueTotal: document.totalValue(),
     );
     await datasource.add(model);
   }

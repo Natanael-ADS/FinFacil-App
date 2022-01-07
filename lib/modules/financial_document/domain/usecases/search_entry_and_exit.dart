@@ -1,4 +1,4 @@
-import 'package:finfacil_app/modules/core/util/double_util.dart';
+import 'package:finfacil_app/modules/core/util/number_util.dart';
 import 'package:finfacil_app/modules/financial_document/domain/enities/financial_document.dart';
 import 'package:finfacil_app/modules/financial_document/domain/repositories/search_financial_repository.dart';
 import 'package:finfacil_app/modules/financial_document/domain/status/status_entry_exit.dart';
@@ -33,9 +33,9 @@ class SearchEntryAndExitImpl implements SearchEntryAndExit {
     double valueDifferent = valueEntries - valueExits;
 
     final success = StatusSuccess();
-    success.valueDifferent = DoubleUtil.doubleToString(valueDifferent);
-    success.valueEntries = DoubleUtil.doubleToString(valueEntries);
-    success.valueExits = DoubleUtil.doubleToString(valueExits);
+    success.valueDifferent = NumberUtil.douToStr(valueDifferent);
+    success.valueEntries = NumberUtil.douToStr(valueEntries);
+    success.valueExits = NumberUtil.douToStr(valueExits);
     return success;
   }
 }
