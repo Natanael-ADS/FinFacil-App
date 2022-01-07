@@ -1,3 +1,4 @@
+import 'package:finfacil_app/modules/core/error/Failure.dart';
 import 'package:finfacil_app/modules/core/util/number_util.dart';
 import 'package:finfacil_app/modules/financial_document/domain/enities/financial_document.dart';
 import 'package:finfacil_app/modules/financial_document/domain/repositories/search_financial_repository.dart';
@@ -13,12 +14,14 @@ class SearchEntryAndExitImpl implements SearchEntryAndExit {
   SearchEntryAndExitImpl(this.repository);
   @override
   Future<StatusEntryExit> call(DateTime date) async {
+    StatusEntryExit status = StatusError();
     try {
       final documents = await repository.search(date);
-      return _calculate(documents);
-    } catch (e) {
-      return StatusError();
+      status = _calculate(documents);
+    } catch (e, s) {
+      Failure.log(e, s);
     }
+    return status;
   }
 
   StatusSuccess _calculate(List<FinancialDocument> documents) {

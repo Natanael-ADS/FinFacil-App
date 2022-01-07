@@ -1,5 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
+import 'package:finfacil_app/modules/core/error/Failure.dart';
 import 'package:intl/intl.dart';
 
 class DatetimeUtil {
@@ -35,8 +36,8 @@ class DatetimeUtil {
       DateFormat formatter = DateFormat(FORMATO_DATE);
       DateTime date = formatter.parse(data);
       return date;
-    } on Exception catch (e) {
-      print(e);
+    } catch (e, s) {
+      Failure.log(e, s);
       return DATETIME_INVALIDATE;
     }
   }
@@ -47,8 +48,8 @@ class DatetimeUtil {
       DateTime data = dateFormat.parse(dbDate);
 
       return data;
-    } on Exception catch (e) {
-      print(e);
+    } catch (e, s) {
+      Failure.log(e, s);
       return DATETIME_INVALIDATE;
     }
   }
@@ -56,8 +57,8 @@ class DatetimeUtil {
   static String getMonthYear(DateTime date) {
     try {
       return "${_months[date.month]}/${date.year.toString()}";
-    } on Exception catch (e) {
-      print(e);
+    } catch (e, s) {
+      Failure.log(e, s);
       return "DATETIME_INVALIDATE";
     }
   }

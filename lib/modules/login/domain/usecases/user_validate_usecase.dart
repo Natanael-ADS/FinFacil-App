@@ -1,3 +1,4 @@
+import 'package:finfacil_app/modules/core/error/Failure.dart';
 import 'package:finfacil_app/modules/login/domain/entities/user.dart';
 import 'package:finfacil_app/modules/login/domain/repositories/user_validate_repository.dart';
 
@@ -25,7 +26,8 @@ class UserValidateUseCaseImpl implements UserValidateUsecase {
 
       final users = await repository.search(user);
       return _checkingUsers(users, user);
-    } catch (e) {
+    } catch (e, s) {
+      Failure.log(e, s);
       return ErrorLogin();
     }
   }

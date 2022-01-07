@@ -1,3 +1,4 @@
+import 'package:finfacil_app/modules/core/error/Failure.dart';
 import 'package:finfacil_app/modules/financial_document/domain/enities/financial_document.dart';
 import 'package:finfacil_app/modules/financial_document/domain/repositories/add_document_repository.dart';
 import 'package:finfacil_app/modules/financial_document/domain/status/status_add_document.dart';
@@ -18,8 +19,8 @@ class AddDocumentImpl implements AddDocument {
         repository.add(document);
         status = StatusOK();
       }
-    } on Exception catch (e) {
-      status = StatusError(error: e);
+    } catch (e, s) {
+      Failure.log(e, s);
     }
     return status;
   }
