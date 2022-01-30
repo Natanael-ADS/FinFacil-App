@@ -7,7 +7,7 @@ class CustomFilter extends StatefulWidget {
   Function onPressedPrevious = () {};
   Function onPressedNext = () {};
   String contentText = "n/d";
-  double height = 80;
+  double height = 100;
 
   CustomFilter({
     this.onPressedPrevious,
@@ -39,11 +39,11 @@ class _CustomFilterState extends State<CustomFilter> {
           ),
           SizedBox(
             height: 20,
-            width: 150,
+            width: 180,
             child: Center(
               child: Text(
                 widget.contentText ?? "n/d",
-                style: TextStyle(fontSize: 20, color: ColorConst.TEXT_1),
+                style: TextStyle(fontSize: 16, color: ColorConst.TEXT_1),
               ),
             ),
           ),

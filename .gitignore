@@ -1,35 +1,3 @@
 **.dart_tool/ 
 .packages
-build/
-.dart_tool/build/fcd1995bc647fb959e82ea360c6c2c9a/asset_graph.json
-.dart_tool/chrome-device/Default/Cookies
-.dart_tool/chrome-device/Default/Favicons
-.dart_tool/chrome-device/Default/History
-.dart_tool/chrome-device/Default/History-journal
-.dart_tool/chrome-device/Default/Network Persistent State
-.dart_tool/chrome-device/Default/Preferences
-.dart_tool/chrome-device/Default/Reporting and NEL
-.dart_tool/chrome-device/Default/TransportSecurity
-.dart_tool/chrome-device/Default/Visited Links
-.dart_tool/chrome-device/Default/Extension Scripts/LOG
-.dart_tool/chrome-device/Default/Extension Scripts/LOG.old
-.dart_tool/chrome-device/Default/Extension State/LOG
-.dart_tool/chrome-device/Default/Extension State/LOG.old
-.dart_tool/chrome-device/Default/Local Storage/leveldb/LOG
-.dart_tool/chrome-device/Default/Local Storage/leveldb/LOG.old
-.dart_tool/chrome-device/Default/Service Worker/Database/000003.log
-.dart_tool/chrome-device/Default/Service Worker/Database/LOG
-.dart_tool/chrome-device/Default/Service Worker/Database/LOG.old
-.dart_tool/chrome-device/Default/Session Storage/000003.log
-.dart_tool/chrome-device/Default/Session Storage/LOG
-.dart_tool/chrome-device/Default/Session Storage/LOG.old
-.dart_tool/chrome-device/Default/shared_proto_db/LOG
-.dart_tool/chrome-device/Default/shared_proto_db/LOG.old
-.dart_tool/chrome-device/Default/shared_proto_db/metadata/000003.log
-.dart_tool/chrome-device/Default/shared_proto_db/metadata/LOG
-.dart_tool/chrome-device/Default/shared_proto_db/metadata/LOG.old
-.dart_tool/chrome-device/Default/Site Characteristics Database/LOG
-.dart_tool/chrome-device/Default/Site Characteristics Database/LOG.old
-.dart_tool/chrome-device/Default/Sync Data/LevelDB/LOG
-.dart_tool/chrome-device/Default/Sync Data/LevelDB/LOG.old
-build/test_cache/build/c075001b96339384a97db4862b8ab8db.cache.dill.track.dill
+**build/

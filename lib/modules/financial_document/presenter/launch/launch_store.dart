@@ -39,9 +39,9 @@ abstract class _LaunchStoreBase with Store {
 
     int number = NumberUtil.strToInt(numberParcelPaidController.text);
     if (isEntry) {
-      document.setNumberEntry(number);
+      document.setNumberEntryAndType(number, "N/D");
     } else {
-      document.setNumberExity(number);
+      document.setNumberExityAndType(number, "N/D");
     }
 
     totalPaid = NumberUtil.douToStrReal(document.totalValueEntriesOrExits());

@@ -47,7 +47,7 @@ class _SplashPageState extends State<SplashPage> {
 
   final isLogined = true;
   _threading(context) {
-    TimerUtil.start(10, () {
+    TimerUtil.start(5, () {
       if (isLogined) {
         Modular.to.navigate(RouteConst.HOME);
       } else {

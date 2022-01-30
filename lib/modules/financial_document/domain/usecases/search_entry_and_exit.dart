@@ -14,7 +14,7 @@ class SearchEntryAndExitImpl implements SearchEntryAndExit {
   SearchEntryAndExitImpl(this.repository);
   @override
   Future<StatusEntryExit> call(DateTime date) async {
-    StatusEntryExit status = StatusError();
+    StatusEntryExit status = Error();
     try {
       final documents = await repository.search(date);
       status = _calculate(documents);
@@ -24,7 +24,7 @@ class SearchEntryAndExitImpl implements SearchEntryAndExit {
     return status;
   }
 
-  StatusSuccess _calculate(List<FinancialDocument> documents) {
+  Success _calculate(List<FinancialDocument> documents) {
     double valueEntries = 0;
     double valueExits = 0;
 
@@ -35,7 +35,7 @@ class SearchEntryAndExitImpl implements SearchEntryAndExit {
 
     double valueDifferent = valueEntries - valueExits;
 
-    final success = StatusSuccess();
+    final success = Success(documents);
     success.valueDifferent = NumberUtil.douToStr(valueDifferent);
     success.valueEntries = NumberUtil.douToStr(valueEntries);
     success.valueExits = NumberUtil.douToStr(valueExits);

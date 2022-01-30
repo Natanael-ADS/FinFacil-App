@@ -28,7 +28,7 @@ void main() {
 
     final result = await usecase(DateTime(2021, 12, 01));
 
-    expect(result, isA<StatusSuccess>());
+    expect(result, isA<Success>());
     expect(result.getValueDifferent(), 'R\$ 50.00');
   });
 

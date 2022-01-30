@@ -8,6 +8,10 @@ class ColorConst {
   static const TEXT_1 = MaterialColor(0xFF585858, _customGray);
   static const TEXT_2 = Colors.white;
 
+  static const ICON_PAID = Colors.green;
+  static const ICON_PENDING = Colors.yellow;
+  static const ICON_OVERDUE = Colors.red;
+
   static const Map<int, Color> _customOrange = {
     50: Color(0xFFFBE9E7),
     100: Color(0xFFFFCCBC),

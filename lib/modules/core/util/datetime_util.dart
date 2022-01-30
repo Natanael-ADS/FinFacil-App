@@ -7,7 +7,7 @@ class DatetimeUtil {
   static const String FORMAT_DATE_BD = "yyyy-MM-dd";
   static const String FORMAT_DATE_TIME_BD = "yyyy-MM-dd hh:mm:ss";
   static const String FORMATO_DATE = "dd/MM/yyyy";
-  static const String FORMAT_DATE_TIME = "dd/MM/yyyy hh:mm:ss";
+  static const String FORMAT_DATE_TIME = "dd/MM/yyyy HH:mm:ss";
 
   static final DATETIME_INVALIDATE = DateTime(1980, 01, 01);
 

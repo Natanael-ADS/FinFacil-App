@@ -25,7 +25,7 @@ void main() {
     });
 
     final result = await usecase(DateTime.now());
-    expect(result, isA<StatusSuccess>());
+    expect(result, isA<Success>());
     expect(result.getValueInput(), 'R\$ 200.00');
     expect(result.getValueDifferent(), 'R\$ 100.00');
   });
@@ -33,7 +33,7 @@ void main() {
     when(repository.search(any)).thenAnswer((realInvocation) => null);
 
     final result = await usecase(DateTime.now());
-    expect(result, isA<StatusError>());
+    expect(result, isA<Error>());
   });
 
   testWidgets('return StatusSuccess different -100...', (tester) async {
@@ -46,7 +46,7 @@ void main() {
     });
 
     final result = await usecase(DateTime.now());
-    expect(result, isA<StatusSuccess>());
+    expect(result, isA<Success>());
     expect(result.getValueOutput(), 'R\$ 200.00');
     expect(result.getValueDifferent(), 'R\$ -100.00');
   });

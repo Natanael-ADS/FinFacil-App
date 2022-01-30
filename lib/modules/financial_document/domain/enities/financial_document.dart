@@ -1,6 +1,7 @@
 import 'package:finfacil_app/modules/financial_document/domain/enities/entry_history.dart';
 
 import 'exit_history.dart';
+import 'launch_type.dart';
 
 class FinancialDocument {
   int _id = 0;
@@ -47,17 +48,17 @@ class FinancialDocument {
     return (_numberParcel - numberEntriesAndExits()) * _valueParcel;
   }
 
-  void setNumberEntry(int number) {
+  void setNumberEntryAndType(int number, String type) {
     _entries = [];
     for (var _ = 1; _ <= number; _++) {
-      _entries += [EntryHistory()];
+      _entries += [EntryHistory(launch: LaunchType(description: type))];
     }
   }
 
-  void setNumberExity(int number) {
+  void setNumberExityAndType(int number, String type) {
     _exits = [];
     for (var _ = 1; _ <= number; _++) {
-      _exits += [ExitHistory()];
+      _exits += [ExitHistory(launch: LaunchType(description: type))];
     }
   }
 }
