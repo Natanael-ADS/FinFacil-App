@@ -14,6 +14,16 @@ class EntryHistoryModel {
     this.launch,
   });
 
+  EntryHistoryModel.fromUnity(EntryHistory history) {
+    this.id = history.getId();
+    this.day = history.getDay();
+    final launch = history.getLaunch();
+    this.launch = LaunchTypeModel(
+      id: launch.getId(),
+      description: launch.getDescription(),
+    );
+  }
+
   EntryHistory toUnity() {
     return EntryHistory(
         id: this.id, day: this.day, launch: this.launch?.toUnity());

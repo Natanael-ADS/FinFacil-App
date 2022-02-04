@@ -15,6 +15,16 @@ class ExitHistoryModel {
     this.launch,
   });
 
+  ExitHistoryModel.fromUnity(ExitHistory history) {
+    this.id = history.getId();
+    this.day = history.getDay();
+    final launch = history.getLaunch();
+    this.launch = LaunchTypeModel(
+      id: launch.getId(),
+      description: launch.getDescription(),
+    );
+  }
+
   ExitHistory toUnity() {
     return ExitHistory(
         id: this.id, day: this.day, launch: this.launch?.toUnity());
