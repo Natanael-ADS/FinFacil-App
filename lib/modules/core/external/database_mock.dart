@@ -17,8 +17,12 @@ class DatabaseMock {
   void setUser(UserModel model) => _userModels.add(model);
 
   List<FinancialDocumentModel> getFinancialDocuments() => _finDocumentModels;
+
   void setFinancialDocument(FinancialDocumentModel model) =>
       _finDocumentModels.add(model);
+
+  void setFinancialDocuments(List<FinancialDocumentModel> models) =>
+      _finDocumentModels = models;
 
   List<UserModel> _initUserModels() {
     return [
@@ -57,7 +61,7 @@ class DatabaseMock {
         valueParcel: 50,
         exits: [
           ExitHistoryModel(
-            day: DateTime(2021, 12, 26),
+            day: DateTime(2021, 12, 25),
             launch: LaunchTypeModel(description: "Dinheiro"),
           ),
         ],

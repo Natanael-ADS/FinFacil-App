@@ -11,7 +11,7 @@ class FinancialDocumentDataBase implements FinancialDatasource {
   Future<List<FinancialDocumentModel>> searchFromDate(DateTime date) async {
     List<FinancialDocumentModel> models = db.getFinancialDocuments();
 
-    var documents = await models.where(
+    var documents = models.where(
       (m) {
         bool hasEntries = m.entries
                 ?.where((e) => e.day.month == date.month)
