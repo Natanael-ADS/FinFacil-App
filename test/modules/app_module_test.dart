@@ -1,8 +1,10 @@
 import 'package:finfacil_app/modules/app_module.dart';
+import 'package:finfacil_app/modules/financial_document/domain/enities/entry_history.dart';
 import 'package:finfacil_app/modules/financial_document/domain/enities/financial_document.dart';
 import 'package:finfacil_app/modules/financial_document/domain/status/status_add_document.dart';
 import 'package:finfacil_app/modules/financial_document/domain/status/status_entry_exit.dart';
 import 'package:finfacil_app/modules/financial_document/domain/usecases/add_document.dart';
+import 'package:finfacil_app/modules/financial_document/domain/usecases/remove_historic.dart';
 import 'package:finfacil_app/modules/financial_document/domain/usecases/search_entry_and_exit.dart';
 import 'package:finfacil_app/modules/login/domain/entities/user.dart';
 import 'package:finfacil_app/modules/login/domain/usecases/user_validate_usecase.dart';
@@ -38,5 +40,11 @@ void main() {
     final result = await usecase(FinancialDocument());
 
     expect(result, isA<StatusOK>());
+  });
+
+  test('Remove Historic StatusOK', () async {
+    final usecase = Modular.get<RemoveHistoricImpl>();
+
+    usecase(EntryHistory(day: DateTime(2021, 12, 25)));
   });
 }
